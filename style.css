@@ -1,0 +1,239 @@
+@import url('https://fonts.googleapis.com/css?family=Poppins:200,300,400,500,600,700,800,900&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'poppins'sans-serif;
+}
+
+header {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 2.3rem 6.25rem;
+    z-index: 1000;
+}
+
+header .logo {
+    max-width: 120px;
+}
+
+header .toggle {
+    max-width: 60px;
+    cursor: pointer;
+}
+
+header .logo img,
+header .toggle img {
+    max-width: 100%;
+}
+
+.banner {
+    position: relative;
+    width: 100%;
+    min-height: 100vh;
+    padding: 0 6.25rem;
+    background: url(./assets/img/bg.jpg);
+    background-position: center;
+    background-size: cover;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+}
+
+.banner .content {
+    max-width: 550px;
+}
+
+.banner .content h2 {
+    text-transform: uppercase;
+    font-weight: 400;
+    font-size: 2.5em;
+    letter-spacing: 0.1em;
+    color: #fff;
+    margin-top: 3rem;
+}
+
+.banner .content h2 span {
+    font-weight: 800;
+}
+
+.banner .content p {
+    color: #fff;
+    font-size: 1.2em;
+    font-weight: 300;
+    line-height: 1.2em;
+    letter-spacing: 0.02em;
+    margin: 15px 0 35px;
+}
+
+.play {
+    position: relative;
+    display: inline-flex;
+    justify-content: flex-start;
+    align-items: center;
+    color: #fff;
+    text-transform: uppercase;
+    font-weight: 500;
+    letter-spacing: 2px;
+    text-decoration: none;
+    font-size: 1.2em;
+}
+
+.play img {
+    margin-right: 1.3rem;
+    max-width: 3.1rem;
+}
+
+.sci {
+    display: flex;
+    flex-direction: column;
+    top: 50%;
+    position: absolute;
+    justify-content: center;
+    align-items: center;
+    right: 1.2rem;
+    top: 50%;
+    transform: translateY(-50%);
+    -webkit-transform: translateY(-50%);
+    -moz-transform: translateY(-50%);
+    -ms-transform: translateY(-50%);
+    -o-transform: translateY(-50%);
+}
+
+.sci li {
+    list-style-type: none;
+}
+
+.sci li a {
+    text-decoration: none;
+}
+
+.sci li a img {
+    filter: invert(1);
+    -webkit-filter: invert(1);
+}
+
+.slide {
+    background: url(./assets/img/joker.png);
+    position: absolute;
+    bottom: 50px;
+    left: calc(50% - 250px /2);
+    width: 250px;
+    height: 150px;
+    background-size: cover;
+    cursor: pointer;
+    animation: animate 25s linear infinite;
+    -webkit-animation: animate 25s linear infinite;
+}
+
+@keyframes animate {
+    0% {
+        background-position: top;
+    }
+
+    45%,
+    55% {
+        background-position: bottom;
+    }
+}
+
+.trailer {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    -webkit-transform: translate(-50%, -50%);
+    -moz-transform: translate(-50%, -50%);
+    -ms-transform: translate(-50%, -50%);
+    -o-transform: translate(-50%, -50%);
+    z-index: 10000;
+    background: rgba(0, 0, 0, 0.95);
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    visibility: hidden;
+    opacity: 0;
+}
+
+.active {
+    visibility: visible;
+    opacity: 1;
+}
+
+.trailer video {
+    max-width: 900px;
+    outline: none;
+}
+
+.trailer .close {
+    position: absolute;
+    top: 30px;
+    right: 30px;
+    filter: invert(1);
+    -webkit-filter: invert(1);
+    max-width: 32px;
+    cursor: pointer;
+}
+
+@media (max-width: 800px) {
+    header {
+        padding: 20px 50px;
+    }
+
+    header .logo {
+        max-width: 50px;
+    }
+
+    header .toggle {
+        max-width: 40px;
+    }
+
+    .banner {
+        padding: 100px 50px;
+    }
+
+    .banner .content h2 {
+        font-size: 2em;
+        letter-spacing: 0.05em;
+    }
+
+    .banne .content p {
+        font-size: 1em;
+    }
+
+    .slide {
+        position: relative;
+        bottom: initial;
+        left: 0;
+        margin: 1.2rem 0;
+    }
+    .sci {
+        display: flex;
+        flex-direction: row;
+        top: initial;
+        position: absolute;
+        justify-content: center;
+        align-items: center;
+        right: initial;
+        margin-top: 3rem;
+        transform: translateY(-50%);
+        -webkit-transform: translateY(-50%);
+        -moz-transform: translateY(-50%);
+        -ms-transform: translateY(-50%);
+        -o-transform: translateY(-50%);
+    }
+    .sci li {
+        margin-right: 2rem;
+    }
+    .trailer video {
+        max-width: 90%;
+    }
+}
